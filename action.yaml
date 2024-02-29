@@ -98,6 +98,8 @@ inputs:
 runs:
   using: 'docker'
   image: "Dockerfile"
+  env:
+    DOCKER_HOST: "unix:///run/docker/docker.sock"
   args:
     - '-a ${{ inputs.scan-type }}'
     - '-b ${{ inputs.format }}'
